@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="max-image-preview:large">
+    <link rel="stylesheet" id="google-fonts-1-css" href="css_1" media="all">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="css2-1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Nubank Renda - App Oficial</title>
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <link rel="icon" href="ico.ico" type="image/x-icon">
+</head>
+
+
+
+
+
+<body>
+    <audio id="click-sound">
+        <source src="media.html" type="audio/mpeg">
+    </audio>
+
+    <audio id="click-money">
+        <source src="media/dinheiro.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+
+    <!--------------------- Página de login" --------------------->
+
+
+    <div id="login" style="display: block;">
+        <div class="menu"
+            style="display: flex; align-items: center; background-color: #8A05BE; padding: 24px; border-radius: 10px; position: relative;">
+            <img decoding="async" src="images/nubank.png" style="width: 55px; height: 40px;">
+
+            <!-- Texto centralizado -->
+            <a style="font-weight: bold; color: white; position: absolute; left: 50%; transform: translateX(-50%);">
+                Renda Extra com Nubank
+            </a><a>
+                <span class="material-symbols-outlined"
+                    style="font-size: 40px; color: white; margin-left: auto;">person</span>
+            </a>
+        </div>
+        <div style="margin-bottom: 10px;"></div>
+        <div style="margin-bottom: 10px;"></div>
+
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item"><img src="images/nu.png" alt="Imagem 1"></div>
+                <div class="carousel-item"><img src="images/nu2.png" alt="Imagem 2"></div>
+                <div class="carousel-item"><img src="images/nu3.png" alt="Imagem 3"></div>
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">❮</button>
+            <button class="carousel-control next" onclick="nextSlide()">❯</button>
+        </div>
+
+
+        <script>
+            let index = 0;
+
+            function showSlide(n) {
+                const slides = document.querySelector('.carousel-inner');
+                const totalSlides = slides.children.length;
+                if (n >= totalSlides) index = 0;
+                if (n < 0) index = totalSlides - 1;
+                slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+            }
+
+            function nextSlide() {
+                index++;
+                showSlide(index);
+            }
+
+            function prevSlide() {
+                index--;
+                showSlide(index);
+            }
+        </script>
+
+        <br>
+
+
+
+
+
+
+        <div class="loginbox">
+            <p class="popup-textL"
+                style="text-align: center; color: #4a4a4a; font-weight: bold; font-size: 18px; padding-top: px;">
+                O Nubank lançou seu novo aplicativo!</p>
+            <p class="popup-textL" style="text-align: center; color: #4a4a4a; font-weight: bold; font-size: 18px;">
+                "Códigos Lucrativos Nubank!"</p>
+            <p class="popup-textL" style="text-align: center; color: #4a4a4a; font-size: 15px;">
+                Insira seu e-mail para começar!</p>
+
+
+            <div class="input-container" style="margin-bottom:10px; ">
+                <input for="email" type="text" name="email" id="email" placeholder="Insira seu e-mail"
+                    oninput="validateEmail()">
+            </div>
+            <button class="prosseguir-button" id="prosseguir-button" onclick="verificarCampos()"
+                href="#">Cadastrar</button>
+
+            <div style="margin-bottom: 10px;"></div>
+
+
+
+            <span style="color: blue;"></span>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <!--------------------- Conteúdo do "Início" --------------------->
+
+
+
+    <div id="inicio" style="display: none;">
+        <div class="menu">
+            <a style="width: 50%;">
+                <img style="margin-left: 10px; width: 100px;" decoding="async" src="images/nubank.png"
+                    alt="Logo Nubank">
+            </a>
+
+            <div style="flex: 1;"></div>
+            <a style="font-weight: bold; display: flex; margin-right: 10px;">É Por Você</a>
+            <a style="font-weight: bold; display: flex;">Renda</a>
+
+            <div style="width: 45%;" class="buttons-container" href="#" onclick="mostrarPagina('saque')">
+                <div class="valor-box">
+                    <span id="valor" style="font-family: 'Montserrat', sans-serif;">R$ 0.00</span>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 100px;"></div>
+
+
+
+
+        <div class="centro" id="comecar" style="display: block;">
+
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 22px; text-align: center; padding-top: 20px;">
+                Seja bem-vindo(a) ao <br> Códigos Lucrativos Nubank.</p>
+
+
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; text-align: center; margin-top: -15px;">
+                #rendaextracomnubank</p>
+
+            <script src="js/lordicon.js"></script>
+            <img src="images/wired-flat-1103-confetti-hover-pinch.svg" trigger="loop" delay="1500" state="in-reveal"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </img>
+
+            <div style="padding-bottom: 20px;"></div>
+
+            <p style="text-align:center;">Para começar, clique abaixo:</p>
+
+            <button class="gerarCodigo" id="comecar" onclick="comecar()">Começar</button>
+
+            <div style="padding-bottom: 20px;"></div>
+
+        </div>
+
+        <!---- Popup Comecar ---->
+
+        <div class="popup-container" id="popupComecar">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="avytqtql.json" trigger="loop" colors="primary:#000000,secondary:#ffffff"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text"
+                style="font-family: 'Montserrat', sans-serif; font-size: 20px;">Carregando...</span>
+
+        </div>
+
+        <!--------------------- Anuncio 1 --------------------->
+
+
+        <div class="white-box" id="ad1" style="display: none;">
+
+            <img decoding="async" src="images/1.png"
+                style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style=" padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Moura.</p>
+
+            <button id="gerarCodigo" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado" style="display: none;">
+                <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio"
+                    style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId1" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B1"
+                    onclick="showLoadingB1(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B1 ---->
+
+        <div class="popup-container" id="popupB1">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código Moura</span>
+
+        </div>
+
+
+        <!--------------------- Anuncio 2 --------------------->
+
+
+        <div class="white-box" id="ad2" style="display: none; text-align: center;">
+
+            <img decoding="async" src="images/2.png"
+                style="width: 100px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style="padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Boticário.</p>
+
+            <button id="gerarCodigo2" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado2" style="display: none; text-align: center;">
+                <p style="margin-top: 20px;">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio2"
+                    style="font-weight: bold; margin-top: -15px; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId2" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B2"
+                    onclick="showLoadingB2(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B2 ---->
+
+        <div class="popup-container" id="popupB2">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Boticário</span>
+
+
+        </div>
+
+
+        <!---------------------- Conteúdo do "p3" ---------------------->
+
+
+        <div class="white-box" id="ad3" style="display: none; text-align: center;">
+
+            <img decoding="async" src="images/3.png"
+                style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style="padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Petrobas.</p>
+
+            <button id="gerarCodigo3" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado3" style="display: none; text-align: center;">
+                <p style="margin-top: 20px;">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio3"
+                    style="font-weight: bold; margin-top: -15px; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId3" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B3"
+                    onclick="showLoadingB3(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B3 ---->
+
+        <div class="popup-container" id="popupB3">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Petrobas</span>
+
+
+
+        </div>
+
+
+        <!---------------------- Conteúdo do "p4" ---------------------->
+
+
+        <div class="white-box" id="ad4" style="display: none; text-align: center;">
+
+            <img decoding="async" src="images/4.png"
+                style="width: 100px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style="padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código da Claro.</p>
+
+            <button id="gerarCodigo4" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado4" style="display: none; text-align: center;">
+                <p style="margin-top: 20px;">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio4"
+                    style="font-weight: bold; margin-top: -15px; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId4" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B4"
+                    onclick="showLoadingB4(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B4 ---->
+
+        <div class="popup-container" id="popupB4">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Claro</span>
+
+
+
+        </div>
+
+
+        <!---------------------- Conteúdo do "p5" ---------------------->
+
+
+        <div class="white-box" id="ad5" style="display: none;">
+
+            <img decoding="async" src="images/5.png"
+                style="width: 100px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style=" padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Burger King.</p>
+
+            <button id="gerarCodigo5" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado5" style="display: none;">
+                <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio5"
+                    style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId5" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B5"
+                    onclick="showLoadingB5(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B4 ---->
+
+        <div class="popup-container" id="popupB5">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Burger King</span>
+
+
+
+        </div>
+
+
+        <!---------------------- Conteúdo do "p6" ---------------------->
+
+
+        <div class="white-box" id="ad6" style="display: none">
+
+            <img decoding="async" src="images/6.png"
+                style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style=" padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código SBT.</p>
+
+            <button id="gerarCodigo6" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado6" style="display: none;">
+                <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio6"
+                    style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId6" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B6"
+                    onclick="showLoadingB6(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B6 ---->
+
+        <div class="popup-container" id="popupB6">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da SBT</span>
+
+
+
+        </div>
+
+        <!---------------------- Conteúdo do "p7" ---------------------->
+
+
+        <div class="white-box" id="ad7" style="display: none">
+
+            <img decoding="async" src="images/7.png"
+                style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style=" padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Mercado Livre.</p>
+
+            <button id="gerarCodigo7" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado7" style="display: none;">
+                <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio7"
+                    style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId7" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B7"
+                    onclick="showLoadingB7(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B7 ---->
+
+        <div class="popup-container" id="popupB7">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Mercado Livre</span>
+
+
+
+        </div>
+
+
+        <!---------------------- Conteúdo do "p8" ---------------------->
+
+
+        <div class="white-box" id="ad8" style="display: none">
+
+            <img decoding="async" src="images/8.png"
+                style="width: 200px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style=" padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Google.</p>
+
+            <button id="gerarCodigo8" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado8" style="display: none;">
+                <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio8"
+                    style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId8" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B8"
+                    onclick="showLoadingB8(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B8 ---->
+
+        <div class="popup-container" id="popupB8">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Google</span>
+
+
+
+        </div>
+
+
+        <!---------------------- Conteúdo do "p9" ---------------------->
+
+
+        <div class="white-box" id="ad9" style="display: none">
+
+            <img decoding="async" src="images/9.png"
+                style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style=" padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Fanta.</p>
+
+            <button id="gerarCodigo9" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado9" style="display: none;">
+                <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio9"
+                    style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId9" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B9"
+                    onclick="showLoadingB9(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B9 ---->
+
+        <div class="popup-container" id="popupB9">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Fanta</span>
+
+
+
+        </div>
+
+        <!---------------------- Conteúdo do "p10" ---------------------->
+
+
+        <div class="white-box" id="ad10" style="display: none">
+
+            <img decoding="async" src="images/10.png"
+                style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+            <p class="wbc" style=" padding-top: 20px;">Clique no botão abaixo para</p>
+            <p class="wbc" style="margin-top: -10px;">gerar o seu código Elma Chips.</p>
+
+            <button id="gerarCodigo10" class="gerarCodigo">Gerar Código</button>
+
+            <div id="codigoGerado10" style="display: none;">
+                <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                <p id="codigoAleatorio10"
+                    style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;">
+                </p>
+            </div>
+
+            <form id="pythonGenerator" style="padding-top: 20px; text-align: center;">
+                <label for="chatId"
+                    style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px;">Insira
+                    o código gerado abaixo:</label><br><br>
+                <input type="text" id="chatId10" name="chatId"
+                    style="border-radius: 12px; height: 40px; text-align: center; text-transform: uppercase;">
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar" class="enviarCodigo" id="B10"
+                    onclick="showLoadingB10(); return false;">
+            </form>
+
+        </div>
+
+
+        <!---- Popup B10 ---->
+
+        <div class="popup-container" id="popupB10">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+            <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+            <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text"
+                style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$
+                83,00</span>
+            <span class="popup-text" style="font-size: 20px;">pelo código da Elma Chips</span>
+
+
+
+        </div>
+
+
+        <!---------------------- Conteúdo do "p11" ---------------------->
+
+
+        <div class="white-box" id="ad11" style="display: none">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--------------------- Limite atingido --------------------->
+
+
+        <div class="popup-containerL" id="popupL">
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="inrunzby.json" trigger="loop" delay="2000" colors="primary:#ffc738,secondary:#000000"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+
+            <span class="popup-textL" style="font-size: 24px; font-weight: bold;">LIMITE DIÁRIO
+                ATINGIDO!</span>
+
+            <div style="margin-bottom: 15px;"></div>
+
+            <p class="popup-textL" style="margin-bottom: 10px; font-size: 18px; font-weight: bold;">
+                Precisa sacar seu saldo de hoje?</p>
+
+
+            <button class="desbloquear-buttonL" style="font-weight: bold; background-color: 	#007FFF;" href="#"
+                onclick="mostrarPagina('saque')">SAQUE AGORA</button>
+
+            <div style="margin-bottom: 15px;"></div>
+
+            <p class="popup-textL" style="margin-bottom: 0px;">Após finalizar o saque,</p>
+            <p class="popup-textL">poderá continuar avaliando e lucrando.</p>
+
+            <div id="progress-bar">
+                <div></div>
+            </div>
+
+            <div style="margin-bottom: 10px;"></div>
+
+            <div class="popup-buttonL-container" style="display: none;">
+                <button class="popup-buttonL" style="color:white;"
+                    onclick="fecharPopupEAgendarReaparecimento()">Continuar avaliando</button>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+        <!--------------------- Menu debaixo --------------------->
+
+
+        <div style="margin-bottom: 80px;"></div>
+
+
+        <div class="menuemb">
+            <!-- Chamando a função para mostrar "Início" -->
+            <a href="#" onclick="mostrarPagina('saque')">
+                <span class="material-symbols-outlined"
+                    style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: white;">paid</span>
+            </a>
+
+            <!-- Chamando a função para mostrar "Página 2" -->
+            <a href="#" onclick="mostrarPagina('inicio')">
+                <span class="material-symbols-outlined"
+                    style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #28a745;">home</span>
+            </a>
+
+            <!-- Chamando a função para mostrar "Saque" -->
+
+        </div>
+    </div>
+
+
+
+    <!--------------------- Conteúdo do "Saque" --------------------->
+
+
+    <div id="saque" style="display: none;">
+
+        <div class="menu">
+            <a>
+                <img style="margin-left: 10px;" decoding="async" src="images/nubank.png">
+            </a>
+            <a style="font-weight: bold; display: flex;">É Por Você</a>
+            <a style="font-weight: bold; display: flex;">Renda</a>
+            <a></a>
+        </div>
+        <div style="margin-bottom: 90px;"></div>
+
+        <div style="margin-bottom: 20px;"></div>
+
+
+
+        <div class="valor-box-saque">
+            <p style="font-size: 18px; padding-top: 5px; margin-bottom: 5px; padding-left: 13px;">
+                Disponível para saque
+            </p>
+            <span id="valor-saque"
+                style="font-size: 55px; justify-content: left; padding-top: 10px; font-family: 'Montserrat', sans-serif; padding-left: 10px;  letter-spacing: -2px; margin-bottom: 10px;">R$
+                0.00</span>
+        </div>
+
+
+        <div style="margin-bottom: 20px;"></div>
+
+        <div class="button-container">
+
+            <button class="square-button" onclick="toggleButton(1)">
+                <img decoding="async" src="images/cpf.png" alt="Botão 1">
+            </button>
+
+            <button class="square-button" onclick="toggleButton(2)">
+                <img decoding="async" src="images/telefone.png" alt="Botão 2">
+            </button>
+
+            <button class="square-button" onclick="toggleButton(3)">
+                <img decoding="async" src="images/email.png" alt="Botão 3">
+            </button>
+
+            <button class="square-button" onclick="toggleButton(4)">
+                <img decoding="async" src="images/aleatoria.png" alt="Botão 4">
+            </button>
+
+        </div>
+
+        <div style="margin-bottom: 15px;"></div>
+
+
+
+
+        <!--------------------- MENU EMBAIXO --------------------->
+
+
+        <div class="menuemb">
+            <!-- Chamando a função para mostrar "Início" -->
+            <a href="#" onclick="mostrarPagina('saque')">
+                <span class="material-symbols-outlined"
+                    style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #28a745;">paid</span>
+            </a>
+
+            <!-- Chamando a função para mostrar "Página 2" -->
+            <a href="#" onclick="mostrarPagina('inicio')">
+                <span class="material-symbols-outlined"
+                    style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: white;">home</span>
+            </a>
+
+            <!-- Chamando a função para mostrar "Saque" -->
+
+
+
+        </div>
+
+
+
+        <div class="input-container">
+            <input type="text" name="chave-pix" id="chave-pix" placeholder="Digite sua chave PIX aqui">
+        </div>
+
+        <div class="input-container">
+            <input type="text" name="quantia" id="quantia" placeholder="Digite o valor que deseja sacar"
+                inputmode="numeric" oninput="formatarValor(this)">
+        </div>
+
+
+        <div style="margin-bottom: 20px;"></div>
+
+        <button class="desbloquear-button" onclick="showPopup()" style="font-weight: bold; font-size: 18x;">REALIZAR
+            SAQUE ➔</button>
+
+        <div class="popup-container" id="popup">
+
+            <script src="js/ogMGp7l9vx9j.js"></script>
+            <lord-icon src="qmcsqnle.json" trigger="loop" delay="1000" colors="primary:#ffc738,secondary:#b26836"
+                style="width:125px;height:125px; display: flex; margin: 0 auto;">
+            </lord-icon>
+
+
+            <span class="popup-text" style="font-size: 20px; font-weight: bold;">DESBLOQUEAR
+                SALDO!</span>
+            <div style="margin-bottom: 20px;"></div>
+            <p class="popup-text">Atenção você recebeu uma licença anual gratuita para continuar utilizando nosso
+                Aplicativo <b>NUBANK.</b><b></b> <br> Para desbloquear o seu saldo pendente e confirmar seu acesso
+                anual, realize apenas o pagamento da taxa de <b>R$19,90</b>!
+            </p>
+            <p class="popup-text">Taxa essa necessária para evitar fraudes e golpes, mas você receberá o
+                <b>Reembolso</b> desse valor de volta na sua conta após o saque!</p>
+            <div style="margin-bottom: 20px;"></div>
+            <button class="desbloquear-button" style="font-weight: bold;"
+                onclick="window.open('https://go.disruptybr.com.br/cexcc')">DESBLOQUEAR
+                SALDO
+                ➔</button>
+            <div style="margin-bottom: 15px;"></div>
+            <!-- Botão de fechar no canto direito superior -->
+            <button class="popup-close-button" onclick="closePopup()">x</button>
+        </div>
+
+        <div style="margin-bottom: 20px;"></div>
+
+
+    </div>
+
+
+
+    <!--------------------- Menu debaixo --------------------->
+
+
+
+
+
+    <div class="menuemb">
+        <!-- Chamando a função para mostrar "Início" -->
+        <a href="#" onclick="mostrarPagina('saque')">
+            <span class="material-symbols-outlined"
+                style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: white;">paid</span>
+        </a>
+
+        <!-- Chamando a função para mostrar "Página 2" -->
+        <a href="#" onclick="mostrarPagina('inicio')">
+            <span class="material-symbols-outlined"
+                style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: white;">home</span>
+        </a>
+
+        <!-- Chamando a função para mostrar "Saque" -->
+
+    </div>
+
+
+
+
+
+
+
+    <!--------------------- Fim do body --------------------->
+
+    <script src="js/script.js"></script>
+
+
+
+
+
+</body>
+
+</html>
